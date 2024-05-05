@@ -3,8 +3,8 @@ public class GradientDescent
     public static void main(String[] args)
     {
 //        simpleGradientDescent(1.4, 1.0, 0.1, 0.000001, 1000);   // #1
-//        simpleGradientDescent(0.0, 0.0, 0.1, 0.000001, 1000);   // #2
-        simpleGradientDescent(1.0, 1.0, 0.01, 0.000001, 1000);   // #3
+        simpleGradientDescent(0.0, 0.0, 0.1, 0.000001, 1000);   // #2
+//        simpleGradientDescent(1.0, 1.0, 0.01, 0.000001, 1000);   // #3
     }
 
     private static void simpleGradientDescent(double x0, double y0, double learning_rate, double epsilon, int max_iterations)
@@ -48,21 +48,21 @@ public class GradientDescent
     private static double f(double x, double y)
     {
 //        return Math.pow(x-2*y, 2) + Math.pow(x-2, 4);   // #1
-//        return Math.sin(x) * Math.cos(y);   // #2
-        return - Math.pow(Math.tan(x*y), 2);
+        return Math.sin(x) * Math.cos(y);   // #2
+//        return - Math.pow(Math.tan(x*y), 2);    // #3
     }
 
     private static double df_dx(double x, double y)
     {
 //        return 2 * (x-2*y) + 4 * Math.pow(x-2, 3);  // #1
-//        return Math.cos(x) * Math.cos(y);   // #2
-        return (-2 * y * Math.tan(x*y)) / Math.pow(Math.cos(x*y),2);
+        return Math.cos(x) * Math.cos(y);   // #2
+//        return (-2 * y * Math.tan(x*y)) / Math.pow(Math.cos(x*y),2);    // #3
     }
 
     private static double df_dy(double x, double y)
     {
 //        return -4 * (x-2*y);    // #1
-//        return - Math.sin(x)*Math.sin(y);   // #2
-        return (-2 * x * Math.tan(x*y)) / Math.pow(Math.cos(x*y),2);
+        return - Math.sin(x)*Math.sin(y);   // #2
+//        return (-2 * x * Math.tan(x*y)) / Math.pow(Math.cos(x*y),2);    // #3
     }
 }
